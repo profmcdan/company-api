@@ -1,0 +1,13 @@
+version: "3.7"
+
+services: 
+  companydb:
+    container_name: companydb
+    environment:
+      - SA_PASSWORD=admin!234
+      - ACCEPT_EULA=Y
+      - MSSQL_PID=Express
+    ports:
+      - "8033:1433"
+    volumes:
+      - companydb-data:/var/opt/mssql

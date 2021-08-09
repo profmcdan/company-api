@@ -4,25 +4,29 @@
     <projectFile profileName="CompanyEmployee">CompanyEmployee.csproj</projectFile>
     <projectFile profileName="IIS Express">CompanyEmployee.csproj</projectFile>
   </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="8782b5a5-da82-45fa-8c70-3827d9a47626" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.CompanyEmployee/.idea/aws.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.CompanyEmployee/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.CompanyEmployee/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.CompanyEmployee/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.CompanyEmployee/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CompanyEmployee.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CompanyEmployee.sln" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controllers/WeatherForecastController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Extensions/ServiceExtensions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Properties/launchSettings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Startup.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WeatherForecast.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/appsettings.Development.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/appsettings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/global.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Entities/Models/Company.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Entities/Models/Employee.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LoggerService/ILoggerManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LoggerService/LoggerManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Repositories/RepositoryContext.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose.override.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nlog.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CompanyEmployee/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CompanyEmployee/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CompanyEmployee.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyEmployee.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CompanyEmployee.sln" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyEmployee.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Contracts/Class1.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Contracts/Contracts.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Extensions/ServiceExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Extensions/ServiceExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LoggerService/Class1.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LoggerService/LoggerService.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Startup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/appsettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +35,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1bc366d2ba144bc5a17e08d4f35f238b8f5578/b3/65011727/Void.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1wSes3lxv8qpiSAzJtSplMQVkLU" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -41,6 +48,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -50,6 +58,7 @@
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected=".NET Launch Settings Profile.CompanyEmployee">
@@ -92,7 +101,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1628456624980</updated>
-      <workItem from="1628456637264" duration="1008000" />
+      <workItem from="1628456637264" duration="2091000" />
+      <workItem from="1628498898730" duration="9062000" />
     </task>
     <servers />
   </component>
@@ -100,7 +110,7 @@
     <option name="version" value="3" />
   </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
-  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -112,8 +122,10 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
 </project>
