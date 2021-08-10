@@ -1,4 +1,4 @@
-namespace CompanyEmployee.LoggerService
+namespace CompanyEmployee.Contracts
 {
     public interface ILoggerManager
     {

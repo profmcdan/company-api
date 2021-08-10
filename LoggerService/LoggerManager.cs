@@ -1,3 +1,4 @@
+using CompanyEmployee.Contracts;
 using NLog;
 
 namespace CompanyEmployee.LoggerService

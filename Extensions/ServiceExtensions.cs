@@ -1,3 +1,4 @@
+using CompanyEmployee.Contracts;
 using CompanyEmployee.LoggerService;
 using CompanyEmployee.Repositories;
 using Microsoft.AspNetCore.Builder;
@@ -37,6 +38,11 @@ namespace CompanyEmployee.Extensions
         {
             services.AddDbContext<RepositoryContext>(opts =>
                 opts.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+        }
+
+        public static void ConfigureRepositoryManager(this IServiceCollection services)
+        {
+            services.AddScoped<IRepositoryManager, RepositoryManager>();
         }
     }
 }
