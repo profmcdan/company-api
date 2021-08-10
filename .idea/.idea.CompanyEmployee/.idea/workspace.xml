@@ -9,9 +9,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8782b5a5-da82-45fa-8c70-3827d9a47626" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Controllers/EmployeesController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Contracts/IEmployeeRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Contracts/IEmployeeRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/CompaniesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/CompaniesController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/EmployeesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/EmployeesController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Repositories/EmployeeRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repositories/EmployeeRepository.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -118,7 +117,7 @@
       <option name="presentableId" value="Default" />
       <updated>1628456624980</updated>
       <workItem from="1628456637264" duration="2091000" />
-      <workItem from="1628498898730" duration="16687000" />
+      <workItem from="1628498898730" duration="17308000" />
     </task>
     <servers />
   </component>
