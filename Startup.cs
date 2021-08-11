@@ -38,7 +38,9 @@ namespace CompanyEmployee
             {
                 config.RespectBrowserAcceptHeader = true;
                 config.ReturnHttpNotAcceptable = true;
-            }).AddXmlDataContractSerializerFormatters().AddCustomCSVFormatter();
+            }).AddNewtonsoftJson()
+                .AddXmlDataContractSerializerFormatters()
+                .AddCustomCSVFormatter();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo {Title = "CompanyEmployee", Version = "v1"});

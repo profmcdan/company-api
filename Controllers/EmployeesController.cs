@@ -4,6 +4,7 @@ using AutoMapper;
 using CompanyEmployee.Contracts;
 using CompanyEmployee.Entities.DataTransferObjects;
 using CompanyEmployee.Entities.Models;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CompanyEmployee.Controllers
@@ -109,6 +110,67 @@ namespace CompanyEmployee.Controllers
             }
             
             _repository.Employee.DeleteEmployee(employee);
+            _repository.Save();
+
+            return NoContent();
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult UpdateEmployeeForCompany(Guid companyId, Guid id, [FromBody] UpdateEmployeeDto employee)
+        {
+            if (employee == null)
+            {
+                _logger.LogError("Employee object is null.");
+                return BadRequest("Employee object is null.");
+            }
+
+            var company = _repository.Company.GetCompany(companyId, trackChanges: false);
+            if (company == null)
+            {
+                _logger.LogError($"Company with id: {companyId} is not found.");
+                return BadRequest($"Company with id: {companyId} is not found.");
+            }
+
+            var employeeEntity = _repository.Employee.GetEmployee(companyId, id, trackChanges: false);
+            if (employeeEntity == null)
+            {
+                _logger.LogError($"Employee with id: {id} is not found.");
+                return BadRequest($"Employee with id: {id} is not found.");
+            }
+
+            _mapper.Map(employee, employeeEntity);
+            _repository.Save();
+
+            return NoContent();
+        }
+
+        [HttpPatch("{id}")]
+        public IActionResult PartiallyUpdateEmployeeForCompany(Guid companyId, Guid id,
+            [FromBody] JsonPatchDocument<UpdateEmployeeDto> patchDocument)
+        {
+            if (patchDocument == null)
+            {
+                _logger.LogError("Patch Doc object sent is null.");
+                return BadRequest("Patch doc object sent is null.");
+            }
+
+            var company = _repository.Company.GetCompany(companyId, trackChanges: false);
+            if (company == null)
+            {
+                _logger.LogError($"Company with id: {companyId} is not found.");
+                return BadRequest($"Company with id: {companyId} is not found.");
+            }
+
+            var employeeEntity = _repository.Employee.GetEmployee(companyId, id, trackChanges: true);
+            if (employeeEntity == null)
+            {
+                _logger.LogError($"Employee with id: {id} is not found.");
+                return BadRequest($"Employee with id: {id} is not found.");
+            }
+
+            var employeeToPatch = _mapper.Map<UpdateEmployeeDto>(employeeEntity);
+            patchDocument.ApplyTo(employeeToPatch);
+            _mapper.Map(employeeToPatch, employeeEntity);
             _repository.Save();
 
             return NoContent();
