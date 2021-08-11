@@ -7,6 +7,7 @@ namespace CompanyEmployee.Entities.Models
     public class Employee
     {
         public Guid Id { get; set; } = Guid.NewGuid();
+        
         [Required(ErrorMessage = "Employee name is required")]
         [MaxLength(30, ErrorMessage = "Maximum lenght for Name is 30 characters")]
         public string Name { get; set; }

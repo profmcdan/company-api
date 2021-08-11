@@ -9,19 +9,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8782b5a5-da82-45fa-8c70-3827d9a47626" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Entities/DataTransferObjects/UpdateCompanyDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Entities/DataTransferObjects/UpdateEmployeeDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.CompanyEmployee/.idea/dataSources/52c2377f-60e3-4aa0-abd1-3ab43e36a139.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CompanyEmployee/.idea/dataSources/52c2377f-60e3-4aa0-abd1-3ab43e36a139.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.CompanyEmployee/.idea/dataSources/52c2377f-60e3-4aa0-abd1-3ab43e36a139/entities/entities.dat" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CompanyEmployee/.idea/dataSources/52c2377f-60e3-4aa0-abd1-3ab43e36a139/entities/entities.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CompanyEmployee/.idea/dataSources/52c2377f-60e3-4aa0-abd1-3ab43e36a139/entities/entities.dat.values" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CompanyEmployee/.idea/dataSources/52c2377f-60e3-4aa0-abd1-3ab43e36a139/entities/entities.dat.values" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CompanyEmployee/.idea/dataSources/52c2377f-60e3-4aa0-abd1-3ab43e36a139/entities/entities.dat.values.s" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CompanyEmployee/.idea/dataSources/52c2377f-60e3-4aa0-abd1-3ab43e36a139/entities/entities.dat.values.s" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.CompanyEmployee/.idea/dataSources/52c2377f-60e3-4aa0-abd1-3ab43e36a139/entities/entities.dat_i" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CompanyEmployee/.idea/dataSources/52c2377f-60e3-4aa0-abd1-3ab43e36a139/entities/entities.dat_i" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CompanyEmployee/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CompanyEmployee/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CompanyEmployee.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyEmployee.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CompanyEmployees/Project/internal_logs/internallog.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyEmployees/Project/internal_logs/internallog.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/CompaniesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/CompaniesController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/EmployeesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/EmployeesController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MappingProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MappingProfile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entities/DataTransferObjects/CreateCompanyDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Entities/DataTransferObjects/CreateCompanyDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entities/DataTransferObjects/CreateEmployeeDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Entities/DataTransferObjects/CreateEmployeeDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entities/Models/Employee.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Entities/Models/Employee.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Startup.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -131,7 +125,7 @@
       <workItem from="1628456637264" duration="2091000" />
       <workItem from="1628498898730" duration="22371000" />
       <workItem from="1628648942592" duration="6757000" />
-      <workItem from="1628681296525" duration="2046000" />
+      <workItem from="1628681296525" duration="2724000" />
     </task>
     <servers />
   </component>
