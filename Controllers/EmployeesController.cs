@@ -87,5 +87,31 @@ namespace CompanyEmployee.Controllers
             return CreatedAtRoute("GetEmployeeForCompany", 
                 new {companyId, id = employeeToReturn.Id}, employeeToReturn);
         }
+
+        [HttpDelete("{id}")]
+        public IActionResult DeleteEmployeeForCompany(Guid companyId, Guid id)
+        {
+            var company = _repository.Company.GetCompany(companyId, trackChanges: false);
+            if (company is null)
+            {
+                // ReSharper disable once HeapView.BoxingAllocation
+                _logger.LogInfo($"Company with id: {companyId} not found.");
+                // ReSharper disable once HeapView.BoxingAllocation
+                return BadRequest($"Company with id: {companyId} not found.");
+            }
+
+            var employee = _repository.Employee.GetEmployee(companyId, id, trackChanges: false);
+            if (employee == null)
+            {
+                // ReSharper disable once HeapView.BoxingAllocation
+                _logger.LogInfo($"Employee with id: {id} not found.");
+                return NotFound();
+            }
+            
+            _repository.Employee.DeleteEmployee(employee);
+            _repository.Save();
+
+            return NoContent();
+        }
     }
 }

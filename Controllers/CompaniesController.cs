@@ -107,7 +107,24 @@ namespace CompanyEmployee.Controllers
             var ids = string.Join(",", companiesToReturn.Select(c => c.Id));
 
             return CreatedAtRoute("CompanyCollection", new {ids}, companiesToReturn);
+        }
 
+        [HttpDelete("{id}")]
+        public IActionResult DeleteCompany(Guid id)
+        {
+            var company = _repository.Company.GetCompany(id, trackChanges: false);
+            if (company is null)
+            {
+                // ReSharper disable once HeapView.BoxingAllocation
+                _logger.LogInfo($"Company with id: {id} not found.");
+                // ReSharper disable once HeapView.BoxingAllocation
+                return BadRequest($"Company with id: {id} not found.");
+            }
+            
+            _repository.Company.DeleteCompany(company);
+            _repository.Save();
+
+            return NoContent();
         }
     }
 }

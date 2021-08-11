@@ -25,5 +25,10 @@ namespace CompanyEmployee.Repositories
         {
             return FindByCondition(x => ids.Contains(x.Id), trackChanges: false);
         }
+
+        public void DeleteCompany(Company company)
+        {
+            Delete(company);
+        }
     }
 }
