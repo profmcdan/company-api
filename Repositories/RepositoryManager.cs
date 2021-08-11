@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using CompanyEmployee.Contracts;
 
 namespace CompanyEmployee.Repositories
@@ -23,7 +24,7 @@ namespace CompanyEmployee.Repositories
             get { return _employeeRepository ??= new EmployeeRepository(_repositoryContext); }
         }
 
-        public void Save() => 
-            _repositoryContext.SaveChanges();
+        public Task SaveAsync() => 
+            _repositoryContext.SaveChangesAsync();
     }
 }

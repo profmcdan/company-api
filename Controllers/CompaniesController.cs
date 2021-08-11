@@ -60,7 +60,7 @@ namespace CompanyEmployee.Controllers
 
             var companyEntity = _mapper.Map<Company>(company);
              _repository.Company.CreateCompany(companyEntity);
-            _repository.Save();
+            await _repository.SaveAsync();
 
             var companyToReturn = _mapper.Map<CompanyDto>(companyEntity);
 
@@ -101,7 +101,7 @@ namespace CompanyEmployee.Controllers
                 _repository.Company.CreateCompany(company);
             }
             
-            _repository.Save();
+            await _repository.SaveAsync();
 
             var companiesToReturn = _mapper.Map<IEnumerable<CompanyDto>>(companies);
             var ids = string.Join(",", companiesToReturn.Select(c => c.Id));
@@ -122,7 +122,7 @@ namespace CompanyEmployee.Controllers
             }
             
             _repository.Company.DeleteCompany(company);
-            _repository.Save();
+            await _repository.SaveAsync();
 
             return NoContent();
         }
@@ -144,7 +144,7 @@ namespace CompanyEmployee.Controllers
             }
 
             _mapper.Map(company, companyEntity);
-            _repository.Save();
+            await _repository.SaveAsync();
 
             return NoContent();
         }

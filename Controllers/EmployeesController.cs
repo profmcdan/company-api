@@ -83,7 +83,7 @@ namespace CompanyEmployee.Controllers
 
             var employeeEntity = _mapper.Map<Employee>(employee);
             _repository.Employee.CreateEmployeeForCompany(companyId, employeeEntity);
-            _repository.Save();
+            await _repository.SaveAsync();
 
             var employeeToReturn = _mapper.Map<EmployeeDto>(employeeEntity);
 
@@ -112,7 +112,7 @@ namespace CompanyEmployee.Controllers
             }
             
             _repository.Employee.DeleteEmployee(employee);
-            _repository.Save();
+            await _repository.SaveAsync();
 
             return NoContent();
         }
@@ -141,7 +141,7 @@ namespace CompanyEmployee.Controllers
             }
 
             _mapper.Map(employee, employeeEntity);
-            _repository.Save();
+             await _repository.SaveAsync();
 
             return NoContent();
         }
@@ -173,7 +173,7 @@ namespace CompanyEmployee.Controllers
             var employeeToPatch = _mapper.Map<UpdateEmployeeDto>(employeeEntity);
             patchDocument.ApplyTo(employeeToPatch);
             _mapper.Map(employeeToPatch, employeeEntity);
-            _repository.Save();
+            await _repository.SaveAsync();
 
             return NoContent();
         }
