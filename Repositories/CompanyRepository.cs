@@ -1,8 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using CompanyEmployee.Contracts;
 using CompanyEmployee.Entities.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace CompanyEmployee.Repositories
 {
@@ -11,20 +13,18 @@ namespace CompanyEmployee.Repositories
         public CompanyRepository(RepositoryContext repositoryContext) : base(repositoryContext)
         {
         }
-        
-        public IEnumerable<Company> GetAllCompanies(bool trackChanges) =>
-            FindAll(trackChanges).OrderBy(c => c.Name).ToList();
 
-        public Company GetCompany(Guid id, bool trackChanges) =>
-            FindByCondition(c => c.Id.Equals(id), trackChanges).SingleOrDefault();
+        public async Task<IEnumerable<Company>> GetAllCompaniesAsync(bool trackChanges) =>  
+            await FindAll(trackChanges).OrderBy(c => c.Name).ToListAsync();
+
+        public async Task<Company> GetCompanyAsync(Guid id, bool trackChanges) => 
+            await FindByCondition(c => c.Id.Equals(id), trackChanges).SingleOrDefaultAsync();
 
         public void CreateCompany(Company company) => 
             Create(company);
 
-        public IEnumerable<Company> GetByIds(IEnumerable<Guid> ids, bool trackChanges)
-        {
-            return FindByCondition(x => ids.Contains(x.Id), trackChanges: false);
-        }
+        public async Task<IEnumerable<Company>> GetByIdsAsync(IEnumerable<Guid> ids, bool trackChanges) => 
+            await FindByCondition(x => ids.Contains(x.Id), trackChanges: false).ToListAsync();
 
         public void DeleteCompany(Company company)
         {

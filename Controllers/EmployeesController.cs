@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using AutoMapper;
 using CompanyEmployee.Contracts;
 using CompanyEmployee.Entities.DataTransferObjects;
@@ -25,9 +26,9 @@ namespace CompanyEmployee.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetEmployeesForCompany(Guid companyId)
+        public async Task<IActionResult> GetEmployeesForCompany(Guid companyId)
         {
-            var company = _repository.Company.GetCompany(companyId, trackChanges: false);
+            var company = await _repository.Company.GetCompanyAsync(companyId, trackChanges: false);
             if (company == null)
             {
                 // ReSharper disable once HeapView.BoxingAllocation
@@ -35,14 +36,14 @@ namespace CompanyEmployee.Controllers
                 return NotFound();
             }
 
-            var employees = _repository.Employee.GetEmployees(companyId, trackChanges: false);
+            var employees = await _repository.Employee.GetEmployeesAsync(companyId, trackChanges: false);
             return Ok(_mapper.Map<IEnumerable<EmployeeDto>>(employees));
         }
 
         [HttpGet("{id}", Name = "GetEmployeeForCompany")]
-        public IActionResult GetEmployeeForCompany(Guid companyId, Guid id)
+        public async Task<IActionResult> GetEmployeeForCompany(Guid companyId, Guid id)
         {
-            var company = _repository.Company.GetCompany(companyId, trackChanges: false);
+            var company = await _repository.Company.GetCompanyAsync(companyId, trackChanges: false);
             if (company == null)
             {
                 // ReSharper disable once HeapView.BoxingAllocation
@@ -50,7 +51,7 @@ namespace CompanyEmployee.Controllers
                 return NotFound();
             }
 
-            var employee = _repository.Employee.GetEmployee(companyId, id, trackChanges: false);
+            var employee = await _repository.Employee.GetEmployeeAsync(companyId, id, trackChanges: false);
             if (employee == null)
             {
                 // ReSharper disable once HeapView.BoxingAllocation
@@ -62,7 +63,8 @@ namespace CompanyEmployee.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateEmployeeForCompany(Guid companyId, [FromBody] CreateEmployeeDto employee)
+        public async Task<IActionResult> CreateEmployeeForCompany(Guid companyId, 
+            [FromBody] CreateEmployeeDto employee)
         {
             if (employee == null)
             {
@@ -70,7 +72,7 @@ namespace CompanyEmployee.Controllers
                 return BadRequest("Employee object is null");
             }
 
-            var company = _repository.Company.GetCompany(companyId, trackChanges: false);
+            var company = await _repository.Company.GetCompanyAsync(companyId, trackChanges: false);
             if (company is null)
             {
                 // ReSharper disable once HeapView.BoxingAllocation
@@ -90,9 +92,9 @@ namespace CompanyEmployee.Controllers
         }
 
         [HttpDelete("{id}")]
-        public IActionResult DeleteEmployeeForCompany(Guid companyId, Guid id)
+        public async Task<IActionResult> DeleteEmployeeForCompany(Guid companyId, Guid id)
         {
-            var company = _repository.Company.GetCompany(companyId, trackChanges: false);
+            var company = await _repository.Company.GetCompanyAsync(companyId, trackChanges: false);
             if (company is null)
             {
                 // ReSharper disable once HeapView.BoxingAllocation
@@ -101,7 +103,7 @@ namespace CompanyEmployee.Controllers
                 return BadRequest($"Company with id: {companyId} not found.");
             }
 
-            var employee = _repository.Employee.GetEmployee(companyId, id, trackChanges: false);
+            var employee = await _repository.Employee.GetEmployeeAsync(companyId, id, trackChanges: false);
             if (employee == null)
             {
                 // ReSharper disable once HeapView.BoxingAllocation
@@ -116,7 +118,7 @@ namespace CompanyEmployee.Controllers
         }
 
         [HttpPut("{id}")]
-        public IActionResult UpdateEmployeeForCompany(Guid companyId, Guid id, [FromBody] UpdateEmployeeDto employee)
+        public async Task<IActionResult> UpdateEmployeeForCompany(Guid companyId, Guid id, [FromBody] UpdateEmployeeDto employee)
         {
             if (employee == null)
             {
@@ -124,14 +126,14 @@ namespace CompanyEmployee.Controllers
                 return BadRequest("Employee object is null.");
             }
 
-            var company = _repository.Company.GetCompany(companyId, trackChanges: false);
+            var company = await _repository.Company.GetCompanyAsync(companyId, trackChanges: false);
             if (company == null)
             {
                 _logger.LogError($"Company with id: {companyId} is not found.");
                 return BadRequest($"Company with id: {companyId} is not found.");
             }
 
-            var employeeEntity = _repository.Employee.GetEmployee(companyId, id, trackChanges: false);
+            var employeeEntity = await _repository.Employee.GetEmployeeAsync(companyId, id, trackChanges: false);
             if (employeeEntity == null)
             {
                 _logger.LogError($"Employee with id: {id} is not found.");
@@ -145,7 +147,7 @@ namespace CompanyEmployee.Controllers
         }
 
         [HttpPatch("{id}")]
-        public IActionResult PartiallyUpdateEmployeeForCompany(Guid companyId, Guid id,
+        public async Task<IActionResult> PartiallyUpdateEmployeeForCompany(Guid companyId, Guid id,
             [FromBody] JsonPatchDocument<UpdateEmployeeDto> patchDocument)
         {
             if (patchDocument == null)
@@ -154,14 +156,14 @@ namespace CompanyEmployee.Controllers
                 return BadRequest("Patch doc object sent is null.");
             }
 
-            var company = _repository.Company.GetCompany(companyId, trackChanges: false);
+            var company = await _repository.Company.GetCompanyAsync(companyId, trackChanges: false);
             if (company == null)
             {
                 _logger.LogError($"Company with id: {companyId} is not found.");
                 return BadRequest($"Company with id: {companyId} is not found.");
             }
 
-            var employeeEntity = _repository.Employee.GetEmployee(companyId, id, trackChanges: true);
+            var employeeEntity = await _repository.Employee.GetEmployeeAsync(companyId, id, trackChanges: true);
             if (employeeEntity == null)
             {
                 _logger.LogError($"Employee with id: {id} is not found.");
