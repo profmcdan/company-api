@@ -17,5 +17,13 @@ namespace CompanyEmployee.Repositories
 
         public Company GetCompany(Guid id, bool trackChanges) =>
             FindByCondition(c => c.Id.Equals(id), trackChanges).SingleOrDefault();
+
+        public void CreateCompany(Company company) => 
+            Create(company);
+
+        public IEnumerable<Company> GetByIds(IEnumerable<Guid> ids, bool trackChanges)
+        {
+            return FindByCondition(x => ids.Contains(x.Id), trackChanges: false);
+        }
     }
 }
