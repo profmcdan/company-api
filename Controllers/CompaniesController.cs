@@ -6,8 +6,10 @@ using AutoMapper;
 using CompanyEmployee.Contracts;
 using CompanyEmployee.Entities.DataTransferObjects;
 using CompanyEmployee.Entities.Models;
+using CompanyEmployee.Entities.RequestFeatures;
 using CompanyEmployee.ModelBinders;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace CompanyEmployee.Controllers
 {
@@ -27,10 +29,11 @@ namespace CompanyEmployee.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetCompanies()
+        public async Task<IActionResult> GetCompanies([FromQuery] CompanyParameters companyParameters)
         {
-            var companies = await _repository.Company.GetAllCompaniesAsync(trackChanges: false);
+            var companies = await _repository.Company.GetAllCompaniesAsync(companyParameters, trackChanges: false);
             var companiesDto = _mapper.Map<IEnumerable<CompanyDto>>(companies); 
+            Response.Headers.Add("X-Pagination", JsonConvert.SerializeObject(companies.MetaData));
             return Ok(companiesDto);
         }
 

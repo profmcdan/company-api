@@ -26,7 +26,8 @@ namespace CompanyEmployee.Repositories
                     .ToListAsync();
             var count = await FindByCondition(e => 
                 e.CompanyId.Equals(companyId), trackChanges: false).CountAsync();
-            return PagedList<Employee>.ToPagedList(employees, employeeParameters.PageNumber, employeeParameters.PageSize, count);
+            return PagedList<Employee>.ToPagedList(employees, employeeParameters.PageNumber, 
+                employeeParameters.PageSize, count);
         }
 
         public async Task<Employee> GetEmployeeAsync(Guid companyId, Guid id, bool trackChanges)
