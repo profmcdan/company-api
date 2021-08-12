@@ -23,7 +23,7 @@ namespace CompanyEmployee.Repositories
                     e.CompanyId.Equals(companyId), trackChanges)
                     .FilterEmployees(employeeParameters.MaxAge, employeeParameters.MaxAge)
                     .Search(employeeParameters.SearchTerm)
-                    .OrderBy(e => e.Name)
+                    .Sort(employeeParameters.OrderBy)
                     .Skip((employeeParameters.PageNumber - 1) * employeeParameters.PageSize)
                     .Take(employeeParameters.PageSize)
                     .ToListAsync();
