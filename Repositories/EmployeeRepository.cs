@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using CompanyEmployee.Contracts;
 using CompanyEmployee.Entities.Models;
 using CompanyEmployee.Entities.RequestFeatures;
+using CompanyEmployee.Repositories.Extensions;
 using Microsoft.EntityFrameworkCore;
 
 namespace CompanyEmployee.Repositories
@@ -20,12 +21,16 @@ namespace CompanyEmployee.Repositories
         {
             var employees = await FindByCondition(e => 
                     e.CompanyId.Equals(companyId), trackChanges)
+                    .FilterEmployees(employeeParameters.MaxAge, employeeParameters.MaxAge)
+                    .Search(employeeParameters.SearchTerm)
                     .OrderBy(e => e.Name)
                     .Skip((employeeParameters.PageNumber - 1) * employeeParameters.PageSize)
                     .Take(employeeParameters.PageSize)
                     .ToListAsync();
+            
             var count = await FindByCondition(e => 
                 e.CompanyId.Equals(companyId), trackChanges: false).CountAsync();
+            
             return PagedList<Employee>.ToPagedList(employees, employeeParameters.PageNumber, 
                 employeeParameters.PageSize, count);
         }
