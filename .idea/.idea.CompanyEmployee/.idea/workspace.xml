@@ -9,14 +9,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8782b5a5-da82-45fa-8c70-3827d9a47626" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Repositories/Extensions/Utility/OrderQueryBuilder.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Controllers/AuthenticationController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Entities/Configuration/RoleConfiguration.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Entities/DataTransferObjects/RegisterUserDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Entities/Models/User.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Migrations/20210812120220_CreateIdentityTables.Designer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Migrations/20210812120220_CreateIdentityTables.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Migrations/20210812120815_AddRolesToDB.Designer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Migrations/20210812120815_AddRolesToDB.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CompanyEmployee/.idea/dataSources/52c2377f-60e3-4aa0-abd1-3ab43e36a139.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CompanyEmployee/.idea/dataSources/52c2377f-60e3-4aa0-abd1-3ab43e36a139.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CompanyEmployee/.idea/dataSources/52c2377f-60e3-4aa0-abd1-3ab43e36a139/entities/entities.dat" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CompanyEmployee/.idea/dataSources/52c2377f-60e3-4aa0-abd1-3ab43e36a139/entities/entities.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CompanyEmployee/.idea/dataSources/52c2377f-60e3-4aa0-abd1-3ab43e36a139/entities/entities.dat.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CompanyEmployee/.idea/dataSources/52c2377f-60e3-4aa0-abd1-3ab43e36a139/entities/entities.dat.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CompanyEmployee/.idea/dataSources/52c2377f-60e3-4aa0-abd1-3ab43e36a139/entities/entities.dat_i" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CompanyEmployee/.idea/dataSources/52c2377f-60e3-4aa0-abd1-3ab43e36a139/entities/entities.dat_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CompanyEmployee/.idea/dataSources/52c2377f-60e3-4aa0-abd1-3ab43e36a139/storage_v2/_src_/database/EmployeeDb.7NfVgA/schema/dbo.sYMBAA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CompanyEmployee/.idea/dataSources/52c2377f-60e3-4aa0-abd1-3ab43e36a139/storage_v2/_src_/database/EmployeeDb.7NfVgA/schema/dbo.sYMBAA.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CompanyEmployee/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CompanyEmployee/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CompanyEmployee.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyEmployee.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entities/RequestFeatures/CompanyParameters.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Entities/RequestFeatures/CompanyParameters.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entities/RequestFeatures/EmployeeParameters.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Entities/RequestFeatures/EmployeeParameters.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entities/RequestFeatures/RequestParameters.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Entities/RequestFeatures/RequestParameters.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Repositories/EmployeeRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repositories/EmployeeRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Repositories/Extensions/RepositoryEmployeeExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repositories/Extensions/RepositoryEmployeeExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CompanyEmployees/Project/internal_logs/internallog.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyEmployees/Project/internal_logs/internallog.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Extensions/ServiceExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Extensions/ServiceExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MappingProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MappingProfile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Migrations/RepositoryContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Migrations/RepositoryContextModelSnapshot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Repositories/RepositoryContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repositories/RepositoryContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Startup.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +105,7 @@
         <option name="Build" />
       </method>
     </configuration>
-    <configuration name="Docker Image" type="docker-deploy" factoryName="docker-compose.yml" server-name="Docker">
+    <configuration name="Docker Compose" type="docker-deploy" factoryName="docker-compose.yml" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
           <option name="envFilePath" value="" />
@@ -111,7 +124,7 @@
     <list>
       <item itemvalue=".NET Launch Settings Profile.CompanyEmployee" />
       <item itemvalue=".NET Launch Settings Profile.CompanyEmployee: IIS Express" />
-      <item itemvalue="Docker.Docker Image" />
+      <item itemvalue="Docker.Docker Compose" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -125,7 +138,8 @@
       <workItem from="1628456637264" duration="2091000" />
       <workItem from="1628498898730" duration="22371000" />
       <workItem from="1628648942592" duration="6757000" />
-      <workItem from="1628681296525" duration="12362000" />
+      <workItem from="1628681296525" duration="16467000" />
+      <workItem from="1628848234680" duration="2772000" />
     </task>
     <servers />
   </component>

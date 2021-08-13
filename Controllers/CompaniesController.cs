@@ -8,6 +8,7 @@ using CompanyEmployee.Entities.DataTransferObjects;
 using CompanyEmployee.Entities.Models;
 using CompanyEmployee.Entities.RequestFeatures;
 using CompanyEmployee.ModelBinders;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
@@ -28,7 +29,7 @@ namespace CompanyEmployee.Controllers
             _mapper = mapper;
         }
 
-        [HttpGet]
+        [HttpGet(Name = "GetCompanies"), Authorize]
         public async Task<IActionResult> GetCompanies([FromQuery] CompanyParameters companyParameters)
         {
             var companies = await _repository.Company.GetAllCompaniesAsync(companyParameters, trackChanges: false);
@@ -52,7 +53,7 @@ namespace CompanyEmployee.Controllers
             return Ok(companyDto);
         }
 
-        [HttpPost]
+        [HttpPost, Authorize(Roles = "Manager")]
         public async Task<IActionResult> CreateCompany([FromBody] CreateCompanyDto company)
         {
             if (company == null)
