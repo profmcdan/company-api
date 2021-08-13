@@ -51,10 +51,8 @@ namespace CompanyEmployee
             }).AddNewtonsoftJson()
                 .AddXmlDataContractSerializerFormatters()
                 .AddCustomCSVFormatter();
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo {Title = "CompanyEmployee", Version = "v1"});
-            });
+            services.ConfigureSwagger();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

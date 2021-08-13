@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using System.Text;
 using CompanyEmployee.Contracts;
 using CompanyEmployee.Entities.Models;
@@ -11,6 +13,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 
 namespace CompanyEmployee.Extensions
 {
@@ -94,6 +97,56 @@ namespace CompanyEmployee.Extensions
                     IssuerSigningKey = new
                         SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings.GetSection("secretKey").Value))
                 };
+            });
+        }
+
+        public static void ConfigureSwagger(this IServiceCollection services)
+        {
+            services.AddSwaggerGen(s =>
+            {
+                s.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Title = "Company API", 
+                    Version = "v1",
+                    Description = "Company Employees API by profmcdan",
+                    TermsOfService = new Uri("https://danielale.com/terms"),
+                    Contact = new OpenApiContact
+                    {
+                        Name = "Daniel Ale",
+                        Email = "danielale9291@gmail.com",
+                        Url = new Uri("https://danielale.com")
+                    },
+                    License = new OpenApiLicense
+                    {
+                        Name = "Company Employees Licence",
+                        Url = new Uri("https://danielale.com/licence")
+                    }
+                });
+                
+                s.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                {
+                    In = ParameterLocation.Header,
+                    Description = "Add jwt with bearer",
+                    Name = "Authorization",
+                    Type = SecuritySchemeType.ApiKey,
+                    Scheme = "Bearer"
+                });
+
+                s.AddSecurityRequirement(new OpenApiSecurityRequirement()
+                {
+                    {
+                        new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference
+                            {
+                                Type = ReferenceType.SecurityScheme,
+                                Id = "Bearer"
+                            },
+                            Name = "Bearer",
+                        },
+                        new List<string>()
+                    }
+                });
             });
         }
     }
