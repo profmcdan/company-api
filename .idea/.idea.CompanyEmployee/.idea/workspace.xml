@@ -9,27 +9,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8782b5a5-da82-45fa-8c70-3827d9a47626" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Controllers/AuthenticationController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Entities/Configuration/RoleConfiguration.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Entities/DataTransferObjects/RegisterUserDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Entities/Models/User.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Migrations/20210812120220_CreateIdentityTables.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Migrations/20210812120220_CreateIdentityTables.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Migrations/20210812120815_AddRolesToDB.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Migrations/20210812120815_AddRolesToDB.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CompanyEmployee/.idea/dataSources/52c2377f-60e3-4aa0-abd1-3ab43e36a139.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CompanyEmployee/.idea/dataSources/52c2377f-60e3-4aa0-abd1-3ab43e36a139.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CompanyEmployee/.idea/dataSources/52c2377f-60e3-4aa0-abd1-3ab43e36a139/entities/entities.dat" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CompanyEmployee/.idea/dataSources/52c2377f-60e3-4aa0-abd1-3ab43e36a139/entities/entities.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CompanyEmployee/.idea/dataSources/52c2377f-60e3-4aa0-abd1-3ab43e36a139/entities/entities.dat.values" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CompanyEmployee/.idea/dataSources/52c2377f-60e3-4aa0-abd1-3ab43e36a139/entities/entities.dat.values" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CompanyEmployee/.idea/dataSources/52c2377f-60e3-4aa0-abd1-3ab43e36a139/entities/entities.dat.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CompanyEmployee/.idea/dataSources/52c2377f-60e3-4aa0-abd1-3ab43e36a139/entities/entities.dat.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CompanyEmployee/.idea/dataSources/52c2377f-60e3-4aa0-abd1-3ab43e36a139/entities/entities.dat.values.s" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CompanyEmployee/.idea/dataSources/52c2377f-60e3-4aa0-abd1-3ab43e36a139/entities/entities.dat.values.s" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CompanyEmployee/.idea/dataSources/52c2377f-60e3-4aa0-abd1-3ab43e36a139/entities/entities.dat_i" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CompanyEmployee/.idea/dataSources/52c2377f-60e3-4aa0-abd1-3ab43e36a139/entities/entities.dat_i" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CompanyEmployee/.idea/dataSources/52c2377f-60e3-4aa0-abd1-3ab43e36a139/storage_v2/_src_/database/EmployeeDb.7NfVgA/schema/dbo.sYMBAA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CompanyEmployee/.idea/dataSources/52c2377f-60e3-4aa0-abd1-3ab43e36a139/storage_v2/_src_/database/EmployeeDb.7NfVgA/schema/dbo.sYMBAA.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CompanyEmployee/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CompanyEmployee/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CompanyEmployee.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyEmployee.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CompanyEmployees/Project/internal_logs/internallog.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyEmployees/Project/internal_logs/internallog.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Extensions/ServiceExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Extensions/ServiceExtensions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MappingProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MappingProfile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Migrations/RepositoryContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Migrations/RepositoryContextModelSnapshot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Repositories/RepositoryContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repositories/RepositoryContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Startup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/AuthenticationController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/AuthenticationController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Repositories/AuthenticationManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repositories/AuthenticationManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +52,8 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="sqlserver" />
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.35013813" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -71,7 +63,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected=".NET Launch Settings Profile.CompanyEmployee">
@@ -139,7 +131,14 @@
       <workItem from="1628498898730" duration="22371000" />
       <workItem from="1628648942592" duration="6757000" />
       <workItem from="1628681296525" duration="16467000" />
-      <workItem from="1628848234680" duration="4251000" />
+      <workItem from="1628848234680" duration="4358000" />
+      <workItem from="1629043113643" duration="971000" />
+      <workItem from="1629217447393" duration="1266000" />
+      <workItem from="1629295761064" duration="2577000" />
+      <workItem from="1629381193841" duration="311000" />
+      <workItem from="1629440360279" duration="1726000" />
+      <workItem from="1629620106217" duration="3447000" />
+      <workItem from="1631449634148" duration="553000" />
     </task>
     <servers />
   </component>

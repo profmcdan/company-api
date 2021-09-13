@@ -1,8 +1,11 @@
+using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using AutoMapper;
 using CompanyEmployee.Contracts;
 using CompanyEmployee.Entities.DataTransferObjects;
 using CompanyEmployee.Entities.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -57,6 +60,17 @@ namespace CompanyEmployee.Controllers
             }
 
             return Ok(new {Token = await _authManager.CreateToken()});
+        }
+
+        [Authorize]
+        [HttpGet("current-user")]
+        public async Task<IActionResult> GetLoggedInUser()
+        {
+            // var user = HttpContext.User;
+            // var userId = user.Claims.First(c => c.Type == ClaimTypes.NameIdentifier).Value;
+            var loggedInUser = await _userManager.GetUserAsync(HttpContext.User);
+            _logger.LogInfo(loggedInUser.Id.ToString());
+            return Ok(loggedInUser.Id.ToString());
         }
     }
 }

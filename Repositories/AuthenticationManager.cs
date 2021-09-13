@@ -52,7 +52,9 @@ namespace CompanyEmployee.Repositories
         {
             var claims = new List<Claim>
             {
-                new Claim(ClaimTypes.Name, _user.UserName)
+                new Claim(ClaimTypes.Name, _user.UserName),
+                new Claim("Id", _user.Id.ToString()),
+                new Claim("Email", _user.Email)
             };
             var roles = await _userManager.GetRolesAsync(_user);
             foreach (var role in roles)
